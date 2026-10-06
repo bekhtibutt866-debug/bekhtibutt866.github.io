@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zorvella | Smart Home Ideas, Decor & Useful Products</title>
+
+  <meta name="description" content="Discover beautiful home decoration ideas, smart organization tips, useful home products and practical buying guides with Zorvella.">
+
+  <meta name="keywords" content="home decor ideas, home decoration, bedroom ideas, living room ideas, kitchen organization, home products, storage ideas, buying guides">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Zorvella | Smart Home Ideas & Products">
+  <meta property="og:description" content="Beautiful home ideas, useful products and practical buying guides.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #faf9f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    header {
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #333;
+    }
+
+    .logo span {
+      color: #a66b45;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 15px;
+      color: #444;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #a66b45;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          rgba(30, 25, 20, 0.45),
+          rgba(30, 25, 20, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 60px 25px;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 55px;
+      max-width: 700px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 19px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #a66b45;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #855438;
+    }
+
+    /* SECTION */
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    /* CATEGORY */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .category h3 {
+      margin-bottom: 8px;
+    }
+
+    .category p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ARTICLES */
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .article {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .article img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 22px;
+    }
+
+    .article-content span {
+      color: #a66b45;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .article-content h3 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    .article-content p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      color: #a66b45;
+      font-weight: bold;
+    }
+
+    /* PROBLEM SOLVER */
+
+    .problem {
+      background: #efe8e1;
+      border-radius: 15px;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .problem h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .problem p {
+      max-width: 700px;
+      margin: auto auto 25px;
+      color: #555;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter {
+      background: #2e2925;
+      color: white;
+      text-align: center;
+      padding: 65px 25px;
+    }
+
+    .newsletter h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    .newsletter input {
+      padding: 14px;
+      width: 280px;
+      max-width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+
+    .newsletter button {
+      padding: 14px 20px;
+      border: none;
+      background: #a66b45;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #191715;
+      color: #bbb;
+      padding: 50px 25px 20px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    footer h4 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .articles {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 45px;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero-content h1 {
+        font-size: 38px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter input {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .newsletter button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="#" class="logo">
+      Zor<span>vella</span>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#">Decor</a>
+      <a href="#">Bedroom</a>
+      <a href="#">Kitchen</a>
+      <a href="#">Organization</a>
+      <a href="#">Buying Guides</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Make Your Home Feel Beautiful & Effortless
+    </h1>
+
+    <p>
+      Discover inspiring home decoration ideas, smart organization tips,
+      useful products and practical buying guides for everyday living.
+    </p>
+
+    <a href="#latest" class="btn">
+      Explore Ideas
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>Explore Our Categories</h2>
+
+    <p>
+      Find simple ideas to make your home more beautiful and organized.
+    </p>
+
+  </div>
+
+
+  <div class="categories">
+
+    <a href="#" class="category">
+      <div class="category-icon">🏠</div>
+      <h3>Home Decor</h3>
+      <p>Beautiful decoration ideas for every room.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">🛏️</div>
+      <h3>Bedroom</h3>
+      <p>Cozy bedroom inspiration and smart ideas.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">🍳</div>
+      <h3>Kitchen</h3>
+      <p>Organization ideas and useful kitchen products.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">📦</div>
+      <h3>Storage</h3>
+      <p>Simple solutions for small and busy homes.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">🧹</div>
+      <h3>Cleaning</h3>
+      <p>Helpful products and easier cleaning ideas.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">🛋️</div>
+      <h3>Living Room</h3>
+      <p>Modern and comfortable living room inspiration.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">💡</div>
+      <h3>Smart Home</h3>
+      <p>Useful technology for a smarter home.</p>
+    </a>
+
+    <a href="#" class="category">
+      <div class="category-icon">🛒</div>
+      <h3>Buying Guides</h3>
+      <p>Practical guides to help you choose products.</p>
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="latest">
+
+  <div class="section-title">
+
+    <h2>Latest Home Ideas</h2>
+
+    <p>
+      Fresh inspiration and useful ideas for your home.
+    </p>
+
+  </div>
+
+
+  <div class="articles">
+
+    <article class="article">
+
+      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80">
+
+      <div class="article-content">
+
+        <span>BEDROOM</span>
+
+        <h3>
+          15 Small Bedroom Ideas That Look Beautiful
+        </h3>
+
+        <p>
+          Simple ways to make a small bedroom feel spacious,
+          comfortable and stylish.
+        </p>
+
+        <a href="#" class="read-more">
+          Read More →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article class="article">
+
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80">
+
+      <div class="article-content">
+
+        <span>LIVING ROOM</span>
+
+        <h3>
+          20 Cozy Living Room Decoration Ideas
+        </h3>
+
+        <p>
+          Create a warm and inviting living room without
+          spending a fortune.
+        </p>
+
+        <a href="#" class="read-more">
+          Read More →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article class="article">
+
+      <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80">
+
+      <div class="article-content">
+
+        <span>KITCHEN</span>
+
+        <h3>
+          12 Smart Kitchen Organization Ideas
+        </h3>
+
+        <p>
+          Make your kitchen cleaner, easier and more
+          organized with simple ideas.
+        </p>
+
+        <a href="#" class="read-more">
+          Read More →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="problem">
+
+    <h2>
+      Have a Home Problem?
+    </h2>
+
+    <p>
+      From tiny bedrooms to messy kitchens and limited storage,
+      discover practical solutions that can make everyday life easier.
+    </p>
+
+    <a href="#" class="btn">
+      Find a Solution
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="newsletter">
+
+  <h2>
+    Get Fresh Home Ideas
+  </h2>
+
+  <p>
+    New decoration ideas, useful products and smart home tips.
+  </p>
+
+  <form onsubmit="subscribe(event)">
+
+    <input
+      type="email"
+      placeholder="Enter your email"
+      required
+    >
+
+    <button type="submit">
+      Subscribe
+    </button>
+
+  </form>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+
+      <div class="footer-logo">
+        Zorvella
+      </div>
+
+      <p>
+        Helping you discover beautiful ideas,
+        useful products and smarter ways to enjoy your home.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>Explore</h4>
+
+      <a href="#">Home Decor</a>
+      <a href="#">Bedroom</a>
+      <a href="#">Kitchen</a>
+      <a href="#">Storage</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>Guides</h4>
+
+      <a href="#">Buying Guides</a>
+      <a href="#">Product Reviews</a>
+      <a href="#">Organization</a>
+      <a href="#">Smart Home</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>About</h4>
+
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Affiliate Disclosure</a>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © 2026 Zorvella. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+  document.getElementById("nav").classList.toggle("active");
+
+}
+
+
+function subscribe(event) {
+
+  event.preventDefault();
+
+  alert("Thanks for subscribing to Zorvella!");
+
+}
+
+</script>
+
+
+</body>
+</html>
